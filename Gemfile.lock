@@ -142,6 +142,7 @@ GEM
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
     nokogiri (1.6.7.2-java)
+    rake (10.5.0)
     rbvmomi (1.8.2)
       builder
       nokogiri (>= 1.4.1)
@@ -161,6 +162,7 @@ DEPENDENCIES
   carrierwave
   fog
   mime-types (~> 2.99)
+  rake
 
 BUNDLED WITH
    1.11.2
