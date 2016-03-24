@@ -1,13 +1,15 @@
 require "carrierwave"
 
+aws_config = YAML.load(File.open("config/aws.yml"))
+
 CarrierWave.configure do |config|
   config.storage = :fog
-  config.store_dir = ENV["CW_STORE_DIR"] || "test"
-  config.fog_directory = ENV["S3_BUCKET"]
+  config.store_dir = aws_config.fetch(:store_dir, "test")
+  config.fog_directory = aws_config.fetch(:bucket)
   config.fog_credentials = {
     provider: "AWS",
-    aws_access_key_id: ENV["AWS_ACCESS_KEY_ID"],
-    aws_secret_access_key: ENV["AWS_SECRET_ACCESS_KEY"]
+    aws_access_key_id: aws_config.fetch(:aws_access_key_id),
+    aws_secret_access_key: aws_config.fetch(:aws_secret_access_key)
   }
 end
 

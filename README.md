@@ -3,12 +3,13 @@
 This project tests file uploading using carrierwave/fog-aws
 
 #### Testing
-Configure your AWS credentials
-```bash
-export CW_STORE_DIR=exon-test
-export S3_BUCKET=<your_s3_bucket>
-export AWS_ACCESS_KEY_ID=<your_aws_key_id>
-export AWS_SECRET_ACCESS_KEY=<your_aws_secret_access_key>
+Add `config/aws.yml`
+
+```config/aws.yml
+:aws_access_key_id: <your_aws_key_id>
+:aws_secret_access_key: <your_aws_secret_access_key>
+:bucket: <your_s3_bucket>
+:store_dir: test
 ```
 
 Run the test
