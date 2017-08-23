@@ -1,5 +1,7 @@
 require "carrierwave"
 
+Excon.defaults[:ciphers] = OpenSSL::SSL::SSLContext::DEFAULT_PARAMS[:ciphers]
+
 aws_config = YAML.load(File.open("config/aws.yml"))
 
 CarrierWave.configure do |config|
